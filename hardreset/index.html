@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hard Reset — System Development</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <a class="brand" href="#">
+        <img src="assets/img/logo.jpg" alt="Hard Reset logo" class="logo-img" />
+        <div class="brand-text">
+          <div class="brand-name">Hard Reset</div>
+          <div class="brand-tag">The END is just the BEGINNING.</div>
+        </div>
+      </a>
+      <nav class="nav-tabs">
+        <ul>
+          <li><a href="#about" data-target="about" class="tab active">About</a></li>
+          <li><a href="#services" data-target="services" class="tab">Services</a></li>
+          <li><a href="#subscriptions" data-target="subscriptions" class="tab">Subscriptions</a></li>
+          <li><a href="#performance" data-target="performance" class="tab">Performance</a></li>
+          <li><a href="#team" data-target="team" class="tab">Team</a></li>
+          <li><a href="#contact" data-target="contact" class="tab">Contact</a></li>
+          <li><a href="#login" data-target="login" class="tab">Login / Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Reset limitations. Build smarter digital futures.</h2>
+          <p>We design and develop reliable, scalable systems for individuals and businesses worldwide.</p>
+          <a class="btn" href="#login">Login Now</a>
+        </div>
+        <div class="hero-summary card" id="summary-cards">
+          <div class="summary">
+            <div class="k">0</div>
+            <div class="label">Projects</div>
+          </div>
+          <div class="summary">
+            <div class="k">0</div>
+            <div class="label">Active Subs</div>
+          </div>
+          <div class="summary">
+            <div class="k">0</div>
+            <div class="label">Clients</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container card about">
+      <h3>About Hard Reset</h3>
+      <p>Hard Reset is a Philippines-based system development company serving a global market. We specialize in building custom, high-performance software systems that empower organizations to modernize processes, improve efficiency, and adapt to an ever-changing digital landscape.</p>
+    </section>
+
+    <section id="services" class="container card services">
+      <h3>Our Services</h3>
+      <div class="services-grid service-cards">
+        <div class="service-card" data-service="Development">
+          <div class="card-title">Custom Development</div>
+          <p class="card-desc">We build bespoke applications across web, mobile, and desktop.</p>
+          <button class="btn start">Start</button>
+        </div>
+        <div class="service-card" data-service="Automation">
+          <div class="card-title">Process Automation</div>
+          <p class="card-desc">Automate repetitive workflows to save time and reduce errors.</p>
+          <button class="btn start">Start</button>
+        </div>
+        <div class="service-card" data-service="Maintenance">
+          <div class="card-title">Maintenance & Support</div>
+          <p class="card-desc">Ongoing support, updates, and troubleshooting for existing systems.</p>
+          <button class="btn start">Start</button>
+        </div>
+        <div class="service-card" data-service="Security">
+          <div class="card-title">Security Audits</div>
+          <p class="card-desc">Comprehensive security audits and hardening services.</p>
+          <button class="btn start">Start</button>
+        </div>
+        <div class="service-card" data-service="Cloud">
+          <div class="card-title">Cloud & DevOps</div>
+          <p class="card-desc">Design and manage cloud infrastructure with DevOps practices.</p>
+          <button class="btn start">Start</button>
+        </div>
+        <div class="service-card" data-service="Consulting">
+          <div class="card-title">Consulting & Analytics</div>
+          <p class="card-desc">Strategic advice and analytics to drive digital transformation.</p>
+          <button class="btn start">Start</button>
+        </div>
+      </div>
+      <!-- floating carousel modal -->
+      <div id="carousel-modal" class="carousel-modal" style="display:none;">
+        <div class="carousel-content">
+          <div class="carousel-header">
+            <h3 id="carousel-title"></h3>
+            <button id="carousel-close" class="btn close-btn">×</button>
+          </div>
+          <div class="carousel-steps">
+            <div class="carousel-step active" data-step="0">
+              <h4>Roadmap & Process</h4>
+              <div id="step-roadmap" class="step-content"></div>
+            </div>
+            <div class="carousel-step" data-step="1">
+              <h4>Terms & Conditions</h4>
+              <div id="step-terms" class="step-content"></div>
+            </div>
+            <div class="carousel-step" data-step="2">
+              <h4>Get Started Form</h4>
+              <form id="step-form" class="service-form">
+                <input type="hidden" id="service-name-field" />
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="Your name" required />
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" placeholder="your@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label>Company</label>
+                  <input type="text" placeholder="Your company" />
+                </div>
+                <div class="form-group">
+                  <label>Project Details</label>
+                  <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">Submit Request</button>
+              </form>
+            </div>
+          </div>
+          <div class="carousel-nav">
+            <button id="carousel-prev" class="btn nav-btn">← Previous</button>
+            <span class="step-indicator"><span id="step-num">1</span> / 3</span>
+            <button id="carousel-next" class="btn nav-btn">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="subscriptions" class="container card subscriptions">
+      <h3>Subscription Plans</h3>
+      <div class="services-grid">
+        <div class="plan-card">
+          <div class="plan-header">
+            <div class="plan-title">Starter</div>
+            <div class="plan-price">₱1,500<span class="per">/mo</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>Basic system setup</li>
+            <li>Monthly updates</li>
+            <li>Email support</li>
+          </ul>
+          <div class="plan-cta"><a class="btn avail" data-plan="Starter" href="#contact">Avail Now</a></div>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="badge" title="Most Popular">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 11 24 11 17 17 19 26 12 20 5 26 7 17 0 11 9 11 12 2"></polygon></svg>
+          </div>
+          <div class="plan-header">
+            <div class="plan-title">Professional</div>
+            <div class="plan-price">₱6,500<span class="per">/mo</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>Custom system development</li>
+            <li>Priority support & updates</li>
+            <li>Security audit</li>
+          </ul>
+          <div class="plan-cta"><a class="btn avail" data-plan="Professional" href="#contact">Avail Now</a></div>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-header">
+            <div class="plan-title">Enterprise</div>
+            <div class="plan-price">Custom<span class="per">/yr</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>Enterprise-grade systems</li>
+            <li>Dedicated account manager</li>
+            <li>24/7 support & SLA</li>
+          </ul>
+          <div class="plan-cta"><a class="btn avail" data-plan="Enterprise" href="#contact">Contact Sales</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="performance" class="container card">
+      <h3>Company Performance</h3>
+      <div class="charts">
+        <div class="chart-card">
+          <h4 class="chart-title">📊 Monthly Revenue Trend</h4>
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4 class="chart-title">📈 Quarterly User Growth</h4>
+          <canvas id="growthChart"></canvas>
+        </div>
+        <div class="chart-card small">
+          <h4 class="chart-title">🎯 Subscription Distribution</h4>
+          <canvas id="subsChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="container card team">
+      <h3>Team</h3>
+      <div class="team-grid" id="team-grid">
+        <!-- team populated by JS -->
+      </div>
+    </section>
+
+    <section id="contact" class="container card contact">
+      <h3>Contact Us</h3>
+      <p class="intro-text">We're here to help! Reach out via your preferred channel and we'll respond promptly.</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>💼 Sales & Inquiries</h4>
+          <p><strong>Email:</strong> <a href="mailto:sales@hardreset.com.ph">sales@hardreset.com.ph</a></p>
+          <p><strong>Phone:</strong> +63 (2) 8123-4567</p>
+          <p class="detail">For service inquiries, quotes, and partnership opportunities.</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>🛠️ Technical Support</h4>
+          <p><strong>Email:</strong> <a href="mailto:support@hardreset.com.ph">support@hardreset.com.ph</a></p>
+          <p><strong>Hotline:</strong> +63 (2) 8765-4321</p>
+          <p class="detail">For troubleshooting, bugs, and technical issues. 24/7 support available.</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>📞 Customer Service</h4>
+          <p><strong>Email:</strong> <a href="mailto:care@hardreset.com.ph">care@hardreset.com.ph</a></p>
+          <p><strong>Phone:</strong> +63 (2) 9876-5432</p>
+          <p class="detail">Billing, account help, subscription changes, and general support.</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>⚠️ Complaints & Feedback</h4>
+          <p><strong>Email:</strong> <a href="mailto:feedback@hardreset.com.ph">feedback@hardreset.com.ph</a></p>
+          <p class="detail">We value your feedback. Report issues and suggestions for improvement here.</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>🚨 Emergency Support</h4>
+          <p><strong>Hotline:</strong> +63 (2) 9123-8765</p>
+          <p><strong>Email:</strong> <a href="mailto:emergency@hardreset.com.ph">emergency@hardreset.com.ph</a></p>
+          <p class="detail">Critical system failures and urgent issues only. Available 24/7.</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>🌐 Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-icon" title="Facebook">f</a>
+            <a href="#" class="social-icon" title="Twitter">𝕏</a>
+            <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <a href="#" class="social-icon" title="GitHub">gh</a>
+          </div>
+          <p class="detail">Stay updated with our latest news and updates.</p>
+        </div>
+      </div>
+
+      <div class="contact-info-box">
+        <h4>📍 Visit Us</h4>
+        <p>Hard Reset Philippines<br>Manila, Philippines<br><a href="#">View on Map</a></p>
+      </div>
+    </section>
+    <section id="login" class="container card auth-section">
+      <h3>Login / Register</h3>
+      <div class="auth-grid">
+        <div class="auth-box auth-active" data-auth="login">
+          <h4>Login</h4>
+          <form>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" placeholder="Password" required />
+            </div>
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-box" data-auth="register" style="display:none;">
+          <h4>Register</h4>
+          <form>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" placeholder="Password" required />
+            </div>
+            <button type="submit" class="btn">Register</button>
+          </form>
+        </div>
+      </div>
+      <div class="auth-toggle" style="margin-top:12px;">
+        <span id="auth-note">Don't have an account?</span>
+        <a href="#" id="auth-switch">Register here</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Hard Reset — All rights reserved.</div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
