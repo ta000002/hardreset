@@ -1,2 +1,0 @@
-# hardreset
-ako budoy
